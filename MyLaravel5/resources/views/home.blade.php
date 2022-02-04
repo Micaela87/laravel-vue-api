@@ -10,8 +10,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>TV Series Currently Available</h1>
-        <example-component></example-component>
+        <app></app>
     </div>
 </body>
 </html>

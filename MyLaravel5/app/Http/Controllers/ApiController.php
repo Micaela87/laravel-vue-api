@@ -28,4 +28,18 @@ class ApiController extends Controller
 
         return response()->json(['data' => $singleTvSeries]);
     }
+
+    public function storeNewTvSeries(Request $request) {
+
+        $data = $request -> validate([
+            'title' => 'required|unique:series|max:255',
+            'author' => 'required|max:255',
+            'release_date' => 'required|date',
+            'rating' => 'max:5|min:0'
+        ]);
+
+        $newSeries = Series::create($data);
+
+        return response('ok', 200);
+    }
 }

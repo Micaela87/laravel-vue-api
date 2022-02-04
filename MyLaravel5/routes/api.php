@@ -23,3 +23,5 @@ Route::get('/tvseries', 'ApiController@getAllTvSeries');
 Route::get('/tvseries/delete/{id}', 'ApiController@deleteTvSeries');
 
 Route::get('/tvseries/{id}', 'ApiController@getSingleTvSeries');
+
+Route::post('/tvseries/store', 'ApiController@storeNewTvSeries') -> name('store');

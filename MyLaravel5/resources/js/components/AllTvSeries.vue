@@ -1,13 +1,22 @@
 <template>
     <div class="container-series">
+        <h1>TV Series Currently Available</h1>
         <div v-for="(singleTvSeries, i) in tvSeries"  class="item">
             <div>Title: {{ singleTvSeries.title }}</div>
             <div>Author: {{ singleTvSeries.author }}</div>
-            <button class="edit-btn">Edit</button>
+            <router-link :to="{ name: 'edit', params: { id: singleTvSeries.id }}">
+                <button class="edit-btn">Edit</button>
+            </router-link>
             <button class="delete-btn" @click="deleteRecord(singleTvSeries.id)">Delete</button>
-            <button class="details-btn" @click="showMoreDetails(singleTvSeries.id)">More Details</button>
+            <router-link :to="{ name: 'show', params: { id: singleTvSeries.id }}">
+                <button class="details-btn">More Details</button>
+            </router-link>
+            <!-- @click="showMoreDetails(singleTvSeries.id) -->
+            <router-view></router-view>
         </div>
-        <button class="add-btn">Add new TV Series</button>
+        <router-link :to="{ name: 'add'}">
+            <button class="add-btn">Add new TV Series</button>
+        </router-link>
     </div>
 </template>
 
@@ -44,11 +53,6 @@
                 } catch(err) {
                     console.log(err);
                 }
-            },
-            showMoreDetails(seriesId) {
-                window.location.href = window.location.href + '/' + seriesId;
-                this.$router.push({ name: 'show', params: { id: seriesId } });
-                this.$router.push({ name: 'tvseries'});
             }
         },
     }

@@ -12,24 +12,43 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import ExampleComponent from './components/ExampleComponent.vue';
-import Single from './components/Single.vue';
+import AllTvSeries from './components/AllTvSeries.vue';
+import SingleTvSeries from './components/SingleTvSeries.vue';
+import App from './components/App.vue';
+import AddNewSeries from './components/AddNewSeries.vue';
+import EditTvSeries from './components/EditTvSeries.vue';
 
 const routes = [
     {
+        path: '/',
+        component: App,
+        name: 'home'
+    },
+    {
         path: '/tvseries',
-        component: ExampleComponent,
+        component: AllTvSeries,
         name: 'tvseries'
     },
     {
         path: '/tvseries/:id',
-        component: Single,
+        component: SingleTvSeries,
         name: 'show'
+    },
+    {
+        path: '/addtvseries',
+        component: AddNewSeries,
+        name: 'add'
+    },
+    {
+        path: '/edittvseries/:id',
+        component: EditTvSeries,
+        name: 'edit'
     },
 ];
 
 const router = new VueRouter({
     mode: 'history',
+    base: process.env.BASE_URL,
     routes
 });
 
@@ -54,6 +73,6 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 
 const app = new Vue({
     el: '#app',
-    component: { ExampleComponent },
+    component: { App },
     router
 });

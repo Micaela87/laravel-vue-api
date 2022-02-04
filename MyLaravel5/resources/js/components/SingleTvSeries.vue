@@ -14,6 +14,9 @@
 </template>
 
 <script>
+
+    import { getSeriesDetails } from "../utils";
+
     export default {
         data() {
             return {
@@ -21,21 +24,11 @@
             }
         },
         created() {
-            this.getSeriesDetails(this.$route.params.id);
+            this.showSeriesDetails();
         },
         methods: {
-            getSeriesDetails: async function(id) {
-                try {
-
-                    let response = await fetch('http://localhost:8000/api/tvseries/' + id);
-
-                    let responseToJson = await response.json();
-
-                    this.singleTvSeries = responseToJson.data;
-
-                } catch(err) {
-                    console.log(err);
-                }
+            showSeriesDetails: async function() {
+                this.singleTvSeries = await getSeriesDetails(this.$route.params.id);
             }
         },
     }
