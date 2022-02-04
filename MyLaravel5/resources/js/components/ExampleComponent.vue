@@ -5,6 +5,7 @@
             <div>Author: {{ singleTvSeries.author }}</div>
             <button class="edit-btn">Edit</button>
             <button class="delete-btn" @click="deleteRecord(singleTvSeries.id)">Delete</button>
+            <button class="details-btn" @click="showMoreDetails(singleTvSeries.id)">More Details</button>
         </div>
         <button class="add-btn">Add new TV Series</button>
     </div>
@@ -43,6 +44,11 @@
                 } catch(err) {
                     console.log(err);
                 }
+            },
+            showMoreDetails(seriesId) {
+                window.location.href = window.location.href + '/' + seriesId;
+                this.$router.push({ name: 'show', params: { id: seriesId } });
+                this.$router.push({ name: 'tvseries'});
             }
         },
     }

@@ -21,4 +21,11 @@ class ApiController extends Controller
 
         return response()->json(['data' => Series::all()]);
     }
+
+    public function getSingleTvSeries($id) {
+
+        $singleTvSeries = Series::findOrFail($id);
+
+        return response()->json(['data' => $singleTvSeries]);
+    }
 }

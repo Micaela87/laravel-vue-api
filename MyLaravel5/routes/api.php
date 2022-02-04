@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/tvseries', 'ApiController@getAllTvSeries');
 
 Route::get('/tvseries/delete/{id}', 'ApiController@deleteTvSeries');
+
+Route::get('/tvseries/{id}', 'ApiController@getSingleTvSeries');

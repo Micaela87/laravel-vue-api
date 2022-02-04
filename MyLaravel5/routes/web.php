@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/tvseries', 'HomeController@home') -> name('tvseries');
 
-Route::get('/series/{id}', 'HomeController@show') -> name('series');
+Route::get('/tvseries/{id}', 'HomeController@show') -> name('series');
 
 Route::get('/create', 'HomeController@create') -> name('create');
 
