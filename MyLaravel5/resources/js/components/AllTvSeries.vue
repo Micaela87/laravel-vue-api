@@ -11,8 +11,6 @@
             <router-link :to="{ name: 'show', params: { id: singleTvSeries.id }}">
                 <button class="details-btn">More Details</button>
             </router-link>
-            <!-- @click="showMoreDetails(singleTvSeries.id) -->
-            <router-view></router-view>
         </div>
         <router-link :to="{ name: 'add'}">
             <button class="add-btn">Add new TV Series</button>

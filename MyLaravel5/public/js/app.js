@@ -5144,8 +5144,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5253,7 +5251,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -41912,8 +41909,6 @@ var render = function () {
                 ]),
               ]
             ),
-            _vm._v(" "),
-            _c("router-view"),
           ],
           1
         )
@@ -41955,8 +41950,6 @@ var render = function () {
       _c("router-link", { attrs: { to: { name: "tvseries" } } }, [
         _vm._v("Show All TV Series Available"),
       ]),
-      _vm._v(" "),
-      _c("router-view"),
     ],
     1
   )

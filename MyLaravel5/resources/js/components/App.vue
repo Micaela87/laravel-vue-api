@@ -1,7 +1,6 @@
 <template>
     <div class="container-series">
         <router-link :to="{ name: 'tvseries' }">Show All TV Series Available</router-link>
-        <router-view></router-view>
     </div>
 
 </template>
