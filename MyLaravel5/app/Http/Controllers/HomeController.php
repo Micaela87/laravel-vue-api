@@ -13,58 +13,58 @@ class HomeController extends Controller
 
     }
 
-    public function show($id) {
+    // public function show($id) {
 
-        $series = Series::findOrFail($id);
+    //     $series = Series::findOrFail($id);
 
-        return view('series', ['series' => $series]);
-    }
+    //     return view('series', ['series' => $series]);
+    // }
 
-    public function create() {
-        return view('create');
-    }
+    // public function create() {
+    //     return view('create');
+    // }
 
-    public function store(Request $request) {
+    // public function store(Request $request) {
 
-        $data = $request -> validate([
-            'title' => 'required|unique:series|max:255',
-            'author' => 'required|max:255',
-            'release_date' => 'required|date',
-            'rating' => 'max:5|min:0'
-        ]);
+    //     $data = $request -> validate([
+    //         'title' => 'required|unique:series|max:255',
+    //         'author' => 'required|max:255',
+    //         'release_date' => 'required|date',
+    //         'rating' => 'max:5|min:0'
+    //     ]);
 
-        $newSeries = Series::create($data);
+    //     $newSeries = Series::create($data);
 
-        return redirect() -> route('series', ['id' => $newSeries -> id]);
-    }
+    //     return redirect() -> route('series', ['id' => $newSeries -> id]);
+    // }
 
-    public function edit($id) {
+    // public function edit($id) {
 
-        $series = Series::findOrFail($id);
+    //     $series = Series::findOrFail($id);
 
-        return view('edit', ['series' => $series]);
-    }
+    //     return view('edit', ['series' => $series]);
+    // }
 
-    public function update(Request $request, $id) {
+    // public function update(Request $request, $id) {
 
-        $data = $request -> validate([
-            'title' => 'required|max:255|unique:series,title,' . $id,
-            'author' => 'required|max:255',
-            'release_date' => 'required|date',
-            'rating' => 'max:5|min:0'
-        ]);
+    //     $data = $request -> validate([
+    //         'title' => 'required|max:255|unique:series,title,' . $id,
+    //         'author' => 'required|max:255',
+    //         'release_date' => 'required|date',
+    //         'rating' => 'max:5|min:0'
+    //     ]);
 
-        $updatedtSeries = Series::findOrFail($id);
-        $updatedtSeries -> update($data);
+    //     $updatedtSeries = Series::findOrFail($id);
+    //     $updatedtSeries -> update($data);
 
-        return redirect() -> route('series', ['id' => $updatedtSeries -> id]);
-    }
+    //     return redirect() -> route('series', ['id' => $updatedtSeries -> id]);
+    // }
 
-    public function delete($id) {
+    // public function delete($id) {
 
-        $seriesToDelete = Series::findOrFail($id);
-        $seriesToDelete -> delete();
+    //     $seriesToDelete = Series::findOrFail($id);
+    //     $seriesToDelete -> delete();
 
-        return back();
-    }
+    //     return back();
+    // }
 }

@@ -13,19 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@home') -> name('home');
+Route::get('/{any}', 'HomeController@home')->where('any', '.*');;
 
-Route::get('/tvseries', 'HomeController@tvseries') -> name('tvseries');
+// Route::get('/{any}', 'HomeController@tvseries') -> name('tvseries');
 
 // Route::get('/tvseries/{id}', 'HomeController@show') -> name('series');
 
-Route::get('/tvseries/create', 'HomeController@create') -> name('create');
+// Route::get('/tvseries/create', 'HomeController@create') -> name('create');
 
 // Route::post('/store', 'HomeController@store') -> name('store');
 
-Route::get('/edit/{id}', 'HomeController@edit') -> name('edit');
+// Route::get('/edit/{id}', 'HomeController@edit') -> name('edit');
 
-Route::post('/update/{id}', 'HomeController@update') -> name('update');
+// Route::post('/update/{id}', 'HomeController@update') -> name('update');
 
 // Route::get('/delete/{id}', 'HomeController@delete') -> name('delete');
 
