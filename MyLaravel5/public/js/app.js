@@ -5258,26 +5258,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({// data() {
-  //     return {
-  //         singleTvSeries: ''
-  //     }
-  // },
-  // created() {
-  //     this.getSeriesDetails(this.$route.params.id);
-  // },
-  // methods: {
-  //     getSeriesDetails: async function(id) {
-  //         try {
-  //             let response = await fetch('http://localhost:8000/api/tvseries/' + id);
-  //             let responseToJson = await response.json();
-  //             this.singleTvSeries = responseToJson.data;
-  //         } catch(err) {
-  //             console.log(err);
-  //         }
-  //     }
-  // },
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
