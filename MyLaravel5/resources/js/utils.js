@@ -5,10 +5,6 @@ export async function getSeriesDetails(id) {
 
         let responseToJson = await response.json();
 
-        // this.singleTvSeries = responseToJson.data;
-
-        console.log(responseToJson);
-
         return responseToJson.data;
 
     } catch(err) {

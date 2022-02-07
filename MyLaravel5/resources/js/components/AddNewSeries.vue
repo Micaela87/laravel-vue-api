@@ -9,7 +9,7 @@
         <label for="release_date">Data di rilascio</label><br>
         <input type="date" name="release_date"><br>
         <label for="rating">Rating</label>
-        <input type="number" min="1" max="5">
+        <input type="number" min="1" max="5" name="rating">
         <input type="submit" value="Submit">
     </form>
     </div>

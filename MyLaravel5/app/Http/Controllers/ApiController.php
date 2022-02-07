@@ -42,4 +42,18 @@ class ApiController extends Controller
 
         return response('ok', 200);
     }
+
+    public function updateTvSeries(Request $request, $id) {
+        $data = $request -> validate([
+            'title' => 'required|max:255|unique:series,title,' . $id,
+            'author' => 'required|max:255',
+            'release_date' => 'required|date',
+            'rating' => 'max:5|min:0'
+        ]);
+
+        $updatedtSeries = Series::findOrFail($id);
+        $updatedtSeries -> update($data);
+
+        return response('ok', 200);
+    }
 }

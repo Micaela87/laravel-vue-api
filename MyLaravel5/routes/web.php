@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', 'HomeController@home')->where('any', '.*');;
+Route::get('/{any}', 'HomeController@home')->where('any', '.*');
 
 // Route::get('/{any}', 'HomeController@tvseries') -> name('tvseries');
 
