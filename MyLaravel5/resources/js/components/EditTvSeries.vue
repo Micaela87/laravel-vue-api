@@ -103,13 +103,17 @@
 
                 try {
 
-                    await fetch(this.urlToPost, {
+                    let response = await fetch(this.urlToPost, {
                         method: 'POST',
                         headers: {
                         'Content-Type': 'application/json'
                         },
                         body: data
                     });
+
+                    if (response.ok) {
+                        this.$router.push({ name: 'tvseries' });
+                    }
 
                 } catch(err) {
                     console.log(err);

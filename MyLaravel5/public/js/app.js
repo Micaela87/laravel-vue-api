@@ -5397,7 +5397,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }(),
     updateTvSeries: function () {
       var _updateTvSeries = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var data;
+        var data, response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -5419,20 +5419,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 4:
-                _context2.next = 9;
+                response = _context2.sent;
+
+                if (response.ok) {
+                  this.$router.push({
+                    name: 'tvseries'
+                  });
+                }
+
+                _context2.next = 11;
                 break;
 
-              case 6:
-                _context2.prev = 6;
+              case 8:
+                _context2.prev = 8;
                 _context2.t0 = _context2["catch"](1);
                 console.log(_context2.t0);
 
-              case 9:
+              case 11:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this, [[1, 6]]);
+        }, _callee2, this, [[1, 8]]);
       }));
 
       function updateTvSeries() {
