@@ -55,5 +55,6 @@ class ApiController extends Controller
         $updatedtSeries -> update($data);
 
         return response('ok', 200);
+
     }
 }

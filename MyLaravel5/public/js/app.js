@@ -5085,6 +5085,14 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -5103,7 +5111,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      title: '',
+      author: '',
+      releaseDate: '',
+      rating: ''
+    };
+  },
+  methods: {
+    sendDataToStore: function () {
+      var _sendDataToStore = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                data = {
+                  title: this.title,
+                  author: this.author,
+                  release_date: this.releaseDate,
+                  rating: this.rating
+                };
+                _context.prev = 1;
+                _context.next = 4;
+                return fetch('http://localhost:8000/api/tvseries/store', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+                });
+
+              case 4:
+                response = _context.sent;
+
+                if (response.ok) {
+                  this.$router.push({
+                    name: 'tvseries'
+                  });
+                }
+
+                _context.next = 11;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](1);
+                console.log(_context.t0);
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[1, 8]]);
+      }));
+
+      function sendDataToStore() {
+        return _sendDataToStore.apply(this, arguments);
+      }
+
+      return sendDataToStore;
+    }()
+  }
+});
 
 /***/ }),
 
@@ -41880,57 +41953,122 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-series" }, [
-      _c("h1", [_vm._v("Fill in the folloiwing form to add a new TV series")]),
+  return _c("div", { staticClass: "container-series" }, [
+    _c("h1", [_vm._v("Fill in the folloiwing form to add a new TV series")]),
+    _vm._v(" "),
+    _c("form", [
+      _c("label", { attrs: { for: "title" } }, [_vm._v("Titolo")]),
+      _c("br"),
       _vm._v(" "),
-      _c(
-        "form",
-        {
-          attrs: {
-            action: "http://localhost:8000/api/tvseries/store",
-            method: "POST",
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.title,
+            expression: "title",
+          },
+        ],
+        attrs: { type: "text", name: "title" },
+        domProps: { value: _vm.title },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.title = $event.target.value
           },
         },
-        [
-          _c("label", { attrs: { for: "title" } }, [_vm._v("Titolo")]),
-          _c("br"),
-          _vm._v(" "),
-          _c("input", { attrs: { type: "text", name: "title" } }),
-          _c("br"),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "author" } }, [_vm._v("Autore")]),
-          _c("br"),
-          _vm._v(" "),
-          _c("input", { attrs: { type: "text", name: "author" } }),
-          _c("br"),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "release_date" } }, [
-            _vm._v("Data di rilascio"),
-          ]),
-          _c("br"),
-          _vm._v(" "),
-          _c("input", { attrs: { type: "date", name: "release_date" } }),
-          _c("br"),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "rating" } }, [_vm._v("Rating")]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "number", min: "1", max: "5", name: "rating" },
-          }),
-          _vm._v(" "),
-          _c("input", { attrs: { type: "submit", value: "Submit" } }),
-        ]
-      ),
-    ])
-  },
-]
+      }),
+      _c("br"),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "author" } }, [_vm._v("Autore")]),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.author,
+            expression: "author",
+          },
+        ],
+        attrs: { type: "text", name: "author" },
+        domProps: { value: _vm.author },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.author = $event.target.value
+          },
+        },
+      }),
+      _c("br"),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "release_date" } }, [
+        _vm._v("Data di rilascio"),
+      ]),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.releaseDate,
+            expression: "releaseDate",
+          },
+        ],
+        attrs: { type: "date", name: "release_date" },
+        domProps: { value: _vm.releaseDate },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.releaseDate = $event.target.value
+          },
+        },
+      }),
+      _c("br"),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "rating" } }, [_vm._v("Rating")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.rating,
+            expression: "rating",
+          },
+        ],
+        attrs: { type: "number", min: "1", max: "5", name: "rating" },
+        domProps: { value: _vm.rating },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.rating = $event.target.value
+          },
+        },
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "button", value: "Submit" },
+        on: {
+          click: function ($event) {
+            return _vm.sendDataToStore()
+          },
+        },
+      }),
+    ]),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
