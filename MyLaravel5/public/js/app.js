@@ -5403,14 +5403,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 data = JSON.stringify({
-                  title: this.singleTvSeries.title,
-                  author: this.singleTvSeries.author,
-                  release_date: this.singleTvSeries.release_date,
-                  rating: this.singleTvSeries.rating
+                  title: this.tvSeriesTitle,
+                  author: this.tvSeriesAuthor,
+                  release_date: this.tvSeriesReleaseDate,
+                  rating: this.tvSeriesRating
                 });
-                console.log(data);
-                _context2.prev = 2;
-                _context2.next = 5;
+                _context2.prev = 1;
+                _context2.next = 4;
                 return fetch(this.urlToPost, {
                   method: 'POST',
                   headers: {
@@ -5419,21 +5418,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   body: data
                 });
 
-              case 5:
-                _context2.next = 10;
+              case 4:
+                _context2.next = 9;
                 break;
 
-              case 7:
-                _context2.prev = 7;
-                _context2.t0 = _context2["catch"](2);
+              case 6:
+                _context2.prev = 6;
+                _context2.t0 = _context2["catch"](1);
                 console.log(_context2.t0);
 
-              case 10:
+              case 9:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this, [[2, 7]]);
+        }, _callee2, this, [[1, 6]]);
       }));
 
       function updateTvSeries() {

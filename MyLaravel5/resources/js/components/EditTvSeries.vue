@@ -95,13 +95,11 @@
             updateTvSeries: async function() {
 
                 let data = JSON.stringify({
-                    title: this.singleTvSeries.title,
-                    author: this.singleTvSeries.author,
-                    release_date: this.singleTvSeries.release_date,
-                    rating: this.singleTvSeries.rating
+                    title: this.tvSeriesTitle,
+                    author: this.tvSeriesAuthor,
+                    release_date: this.tvSeriesReleaseDate,
+                    rating: this.tvSeriesRating
                 });
-
-                console.log(data);
 
                 try {
 
